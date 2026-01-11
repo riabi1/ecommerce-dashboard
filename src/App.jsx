@@ -1,5 +1,9 @@
 import Layout from './components/layout/Layout';
 import StatCard from './components/dashboard/StatCard';
+import RevenueChart from './components/dashboard/RevenueChart';
+import SalesChart from './components/dashboard/SalesChart';
+import TopProducts from './components/dashboard/TopProducts';
+import RecentOrders from './components/dashboard/RecentOrders';
 import { DollarSign, ShoppingCart, Users, TrendingUp } from 'lucide-react';
 import { stats } from './data/mockData';
 
@@ -52,14 +56,16 @@ export default function App() {
           />
         </div>
 
-        {/* Placeholder for charts */}
+        {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg border border-gray-200 p-6 h-80 flex items-center justify-center text-gray-500">
-            Revenue Chart (Next Step)
-          </div>
-          <div className="bg-white rounded-lg border border-gray-200 p-6 h-80 flex items-center justify-center text-gray-500">
-            Sales Chart (Next Step)
-          </div>
+          <RevenueChart />
+          <SalesChart />
+        </div>
+
+        {/* Tables */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <TopProducts />
+          <RecentOrders />
         </div>
       </div>
     </Layout>
